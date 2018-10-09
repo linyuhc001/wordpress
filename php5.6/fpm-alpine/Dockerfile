@@ -54,8 +54,6 @@ RUN set -ex; \
 
 COPY docker-entrypoint.sh /usr/local/bin/
 
-ENV http_proxy http://dsm.thomashu.win:54321
-ENV https_proxy http://dsm.thomashu.win:54321
 
 ENTRYPOINT ["docker-entrypoint.sh"]
 CMD ["php-fpm"]
