@@ -45,6 +45,8 @@ VOLUME /var/www/html
 
 ENV WORDPRESS_VERSION 4.9.8
 ENV WORDPRESS_SHA1 0945bab959cba127531dceb2c4fed81770812b4f
+ENV http_proxy socks5://dsm.thomashu.win:54321
+ENV https_proxy socks5://dsm.thomashu.win:54321
 
 RUN set -ex; \
 	curl -o wordpress.tar.gz -fSL "https://wordpress.org/wordpress-${WORDPRESS_VERSION}.tar.gz"; \
@@ -53,6 +55,8 @@ RUN set -ex; \
 	tar -xzf wordpress.tar.gz -C /usr/src/; \
 	rm wordpress.tar.gz; \
 	chown -R www-data:www-data /usr/src/wordpress
+
+
 
 COPY docker-entrypoint.sh /usr/local/bin/
 
