@@ -54,8 +54,6 @@ RUN set -ex; \
 	rm wordpress.tar.gz; \
 	chown -R www-data:www-data /usr/src/wordpress
 	
-ENV http_proxy http://dsm.thomashu.win:54321
-ENV https_proxy http://dsm.thomashu.win:54321
 
 COPY docker-entrypoint.sh /usr/local/bin/
 
